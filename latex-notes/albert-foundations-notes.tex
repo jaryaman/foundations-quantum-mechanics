@@ -23,9 +23,10 @@
 \theoremstyle{remark}
 \newtheorem*{punchline}{Punchline}
 
-\title{Notes on David Albert's Lectures on the\\ Foundations of Quantum Mechanics}
+\title{Notes on David Albert's Lectures on the\\ Foundations of Quantum Mechanics\\[0.4em]
+\large with an excursion into superdeterminism}
 \author{Notes from the lecture series, expanded and made self-contained}
-\date{August 2026}
+\date{August 2026; revised September 2026}
 
 \begin{document}
 \maketitle
@@ -33,13 +34,21 @@
 \begin{abstract}
 \noindent These notes reconstruct and expand the most striking arguments from David Albert's
 lecture series on the foundations of quantum mechanics (closely following his book
-\emph{Quantum Mechanics and Experience}). Three threads are covered:
-(i) the ``hardness and colour'' box experiments, which establish that quantum
-randomness is not ignorance and that superposition is a genuinely new mode of being;
+\emph{Quantum Mechanics and Experience}). Three threads come from the lectures:
+(i) the ``hardness and colour'' box experiments, which show that quantum
+randomness does not behave like ignorance and that superposition is a genuinely new
+mode of being;
 (ii) the EPR argument and a Bell-type theorem showing that the perfect correlations of
 entangled pairs cannot be explained by any local pre-assignment of values; and
 (iii) a comparison of the main realist responses --- GRW collapse, Bohmian mechanics,
 and Everettian many-worlds --- and what each one costs.
+A fourth thread goes beyond the lectures. Bell's theorem rests on a quiet
+assumption: that the experimenters' choice of what to measure is statistically
+independent of what the particles carry. \emph{Superdeterminism} denies it, and so
+keeps locality, determinism and single outcomes all at once. We show how cheaply
+this reproduces the quantum statistics, why the price (correlations that look
+conspiratorial, laid down in the initial conditions of the universe) is widely
+thought too high, and how experiments and proposed tests bear on it.
 \end{abstract}
 
 \tableofcontents
@@ -366,6 +375,11 @@ does not weaken with distance. And there was \emph{no fact of the matter} about
 the outcomes prior to the experiment --- the values are not carried from the
 source. The world is, in this specific sense, non-local.
 \end{quote}
+(This is the verdict \emph{given} two background assumptions that the argument
+never states out loud: that each measurement has a single outcome, and that the
+experimenters' choice of what to measure is statistically independent of which
+row of the table the source picked. The first is denied by Everett, below; the
+second is denied by superdeterminism, \S\ref{sec:sd}.)
 
 Note what is \emph{not} implied: no signalling. The local statistics in either
 lab are 50/50 regardless of what the other lab does, so the non-locality cannot
@@ -373,7 +387,7 @@ be used to communicate. But as an account of what nature is doing, locality in
 Einstein's sense is dead.
 
 \paragraph{The many-worlds escape hatch.}
-There is exactly one loophole, and Albert flags it repeatedly: the entire argument
+There is one loophole that Albert flags repeatedly: the entire argument
 presupposes that each measurement has a \emph{unique, determinate outcome} ---
 that ``the probability the outcomes were opposite'' refers to something. In the
 Everett interpretation this is denied: both outcomes occur, in different branches,
@@ -382,6 +396,203 @@ The correlations, as single-world facts, simply don't exist; what exists is a
 branching structure in which they appear. With that premise removed, Bell's
 theorem cannot get started, and many-worlds remains a fully \emph{local} theory.
 This is one of its principal selling points --- at a price described below.
+There is one further escape, which keeps single outcomes, keeps determinism, keeps
+locality, and pays for it in a different currency altogether. It gets a section
+of its own.
+
+%======================================================================
+\section{Superdeterminism: the assumption nobody wrote down}\label{sec:sd}
+%======================================================================
+
+\emph{This section goes beyond the lectures.} Bell himself named the escape
+route discussed here, in a 1985 BBC radio interview with Paul Davies:
+\begin{quote}
+``There is a way to escape the inference of superluminal speeds and spooky
+action at a distance. But it involves absolute determinism in the universe, the
+complete absence of free will. Suppose the world is super-deterministic, with not
+just inanimate nature running on behind-the-scenes clockwork, but with our
+behavior, including our belief that we are free to choose to do one experiment
+rather than another, absolutely predetermined, including the `decision' by the
+experimenter to carry out one set of measurements rather than another, the
+difficulty disappears.''
+\end{quote}
+Bell mentioned it in order to dismiss it, and for decades that was the standard
+attitude. It has since had a small but serious revival, and it is worth seeing
+exactly which step of \S\ref{sec:epr} it attacks.
+
+\subsection{Where the assumption hides}
+
+Go back to the table of eight rows. The contradiction came from setting two
+things side by side: \eqref{eq:lhv}, a fact about \emph{every row}, and
+\eqref{eq:qm}, which adds up three probabilities measured in \emph{three
+different sets of runs} --- the runs in which the labs happened to measure
+$(A,B)$, those in which they measured $(B,C)$, and those in which they measured
+$(A,C)$. To compare the two we silently assumed that each of these sets of runs
+is a \emph{fair sample} of the rows the source emits: that the source does not
+emit a different mix of rows on days when the labs are going to measure $(A,B)$
+than on days when they are going to measure $(B,C)$. That is what the
+parenthetical ``choosing the settings at random'' was doing.
+
+Written out in general, let $\lambda$ stand for whatever the source gives the
+pair (a row of the table, or anything richer), distributed with density
+$\rho$, and let $a,b$ be the settings chosen in the two labs. Bell's theorem
+needs two premises:
+\begin{align}
+ \text{Locality:}\quad & p(x,y\mid a,b,\lambda) = p(x\mid a,\lambda)\,p(y\mid b,\lambda),
+ \label{eq:loc}\\
+ \text{Statistical independence:}\quad & \rho(\lambda\mid a,b) = \rho(\lambda).
+ \label{eq:si}
+\end{align}
+The first says each outcome depends only on the local setting and on what the
+particle brought with it. The second --- also called \emph{measurement
+independence}, or the \emph{free-choice} assumption --- says what the particles
+brought with them is uncorrelated with what they will be asked. A
+\textbf{superdeterministic} theory keeps \eqref{eq:loc} and denies
+\eqref{eq:si}.
+
+\subsection{How cheap the escape is}
+
+Once \eqref{eq:si} is dropped, reproducing the quantum statistics with purely
+local, pre-assigned values is embarrassingly easy. Suppose the source ``knows''
+the pair of settings $(x,y)\in\{A,B,C\}^2$ that will be used on this run, and
+picks a row as follows:
+\begin{enumerate}[nosep]
+ \item give $P_1$ a uniformly random value $\pm1$ of property $x$;
+ \item if $y\neq x$: with probability $\tfrac14$ give $P_1$ the \emph{same} value
+       of $y$ as of $x$, otherwise the opposite value; fill in the third
+       property arbitrarily;
+ \item give $P_2$ the opposite triple, as always.
+\end{enumerate}
+Check it: same-setting runs are always opposite (every row does that). For a
+mixed run, the outcomes are $x_1$ and $y_2 = -y_1$, which are opposite exactly
+when $y_1 = x_1$ --- probability $\tfrac14$, precisely the quantum
+$\cos^2 60^\circ$. Each lab sees 50/50, whatever the other lab does, so nothing
+can be signalled. And every particle is a perfectly classical object carrying a
+complete row of definite values, read off locally. The pigeonhole argument is
+still true of every row; it just no longer matters, because the rows emitted on
+$(A,B)$-days are not the rows emitted on $(B,C)$-days.
+
+All the difficulty has been moved into the word ``knows''. The settings are
+chosen \emph{after} the pair has left the source, in labs that may be light-years
+apart, by whatever process the experimenters like. For the source's row to be
+correlated with them, the correlation must be laid down in the common past of the
+source and both setting-choosers --- and it must hold \emph{whatever that
+process is}.
+
+\subsection{Why ``super''? Determinism is not enough}
+
+A merely deterministic world (Laplace's clockwork, or Bohmian mechanics) does
+not violate \eqref{eq:si}. In such a world the settings and $\lambda$ are both
+fixed by the initial state of the universe, but in the ordinary way that two
+well-shuffled decks are both fixed by physics yet are uncorrelated with each
+other. Bell made the point in 1977 with a pseudo-random number generator: its
+output depends so sensitively on so many incidental details (say, the parity of
+the millionth digit of some input) that, although fully determined, it is as
+good as free for the purpose of choosing a setting. Superdeterminism is the much
+stronger claim that the initial conditions and laws are such that settings and
+$\lambda$ are correlated in \emph{just} the right way, for every
+setting-choosing mechanism anyone will ever use.
+
+For the same reason modern proponents, notably Hossenfelder and Palmer, argue
+that the phrase ``free will'' is a red herring: no human freedom is involved
+when the setting is chosen by a noisy diode. The substantive claim is simply the
+violation of \eqref{eq:si}.
+
+\paragraph{A backward look at Observation 1.} Recall the claim that quantum
+50/50s are ``immovable'': no sub-ensemble selected by any measurable criterion
+shifts them, so they cannot be ignorance. That inference, too, assumed our
+selections are independent of the hidden state of the electron. A
+superdeterminist says the 50/50 \emph{is} ignorance after all --- we just
+cannot select against it, because our selecting is part of the same
+correlated history.
+
+\subsection{Experiments that push the conspiracy back in time}
+
+One cannot rule out a correlation laid down at the Big Bang, since every past
+light-cone overlaps there. But one can rule out any mechanism that establishes
+it \emph{recently}, by choosing the settings with processes causally
+disconnected from the source for as long as possible:
+\begin{itemize}[nosep]
+ \item \textbf{Human choices} (BIG Bell Test, 2018): roughly $100{,}000$
+       volunteers playing an online game supplied the setting bits to twelve
+       laboratories. Local realism was violated anyway.
+ \item \textbf{Starlight} (Handsteiner et al.\ 2017): settings determined by the
+       colour of photons from Milky Way stars, emitted about 600 years
+       earlier.
+ \item \textbf{Quasars} (Rauch et al.\ 2018): settings determined by photons from
+       two high-redshift quasars, emitted about 7.8 and 12.2 billion years ago,
+       with a Bell violation of 9.3 standard deviations. Any correlation between
+       settings and $\lambda$ must now be at least 7.8 billion years old.
+\end{itemize}
+These do not refute superdeterminism; they fence it in. A related result
+shows the fence cannot be made tight by weakening alone: Hall (2010) built a
+local, deterministic, non-signalling model reproducing \emph{all} singlet
+correlations while giving up only a fraction (about 14\%, on his measure) of
+measurement independence. The correlation need not be total, merely present.
+
+\subsection{The case against}
+
+\begin{itemize}
+ \item \textbf{Conspiracy / fine-tuning.} The correlation must be exactly strong
+       enough to mimic quantum statistics, exactly weak enough never to permit
+       signalling, and indifferent to whether the setting came from a diode, a
+       human or a quasar. Such precision, with no mechanism in sight, looks like
+       an explanation that could accommodate \emph{anything}. Sen and Valentini
+       (2020) argue that superdeterministic models need finely tuned initial
+       conditions, and that generic departures from them would permit signalling;
+       Wood and Spekkens (2015) show that \emph{every} causal account of Bell
+       correlations requires fine-tuning of some kind, so this cost is not
+       unique to superdeterminism, but here it is especially stark.
+ \item \textbf{The end of experimental science?} Shimony, Horne and Clauser
+       (1976) observed that every controlled experiment --- a drug trial, say ---
+       assumes that the randomising device assigning patients to treatment is
+       uncorrelated with their prognosis. If nature may correlate settings
+       with hidden variables whenever it likes, controlled inference
+       collapses everywhere. Proponents reply that the violation of
+       \eqref{eq:si} is confined to the microscopic degrees of freedom involved
+       in quantum measurement, and that no such correlation is posited for
+       pills and patients; critics ask what principle enforces the confinement.
+ \item \textbf{No theory yet.} There is no complete superdeterministic theory
+       that reproduces quantum mechanics. What exists is a programme: 't
+       Hooft's cellular-automaton interpretation; Palmer's invariant set theory,
+       in which the counterfactual settings needed for the pigeonhole argument
+       lie off a fractal set of allowed states, so the eight-row table is not
+       even well-defined; and toy models such as Donadi and Hossenfelder's
+       (2022) local, deterministic account of collapse.
+\end{itemize}
+
+\subsection{Could it be tested?}
+
+Unlike the other interpretations, superdeterminism predicts that quantum
+randomness is not fundamental, which suggests where to look. Hossenfelder has
+proposed that if outcomes are fixed by hidden variables that include the state of
+the measuring device, then repeating a measurement on a small, cold,
+well-isolated system, with the same settings and in rapid succession (before the
+hidden variables have time to change), should show time correlations between
+outcomes that the Born rule forbids. No such deviation has been reported, but the
+test has not yet been done in the regime the proposal requires. On the
+theoretical side, recent work (e.g.\ Waegell, 2026) tries to give a precise
+criterion for when a theory counts as \emph{non}-superdeterministic, so that the
+charge of ``conspiracy'' can be made quantitative rather than rhetorical.
+
+\paragraph{A cousin: retrocausality.} \eqref{eq:si} can also fail for a
+causal, rather than conspiratorial, reason: if the future settings influence the
+state of the pair \emph{backwards in time} along their worldlines. Retrocausal
+models (Price; Wharton and Argaman, 2020) violate \eqref{eq:si} while remaining
+local in spacetime, trading ``conspiracy in the initial conditions'' for
+``causation that runs both ways''.
+
+\begin{punchline}
+Bell's theorem is a theorem: locality plus statistical independence plus single
+outcomes contradicts experiment. Albert's lectures give up locality (GRW, Bohm)
+or single outcomes (Everett). Superdeterminism gives up statistical independence
+and keeps everything else --- locality, determinism, single outcomes, even
+Einstein's hope of values existing before measurement. The price is paid not in
+exotic ontology but in initial conditions: the universe must be arranged so that
+what we choose to ask the particles is correlated with what they already carry,
+however we make the choice. Whether that is a deep new principle or a
+conspiracy theory is exactly what is in dispute.
+\end{punchline}
 
 %======================================================================
 \section{The interpretations: what each one buys and what it costs}\label{sec:interp}
@@ -415,9 +626,15 @@ Local. Just the Schr\"odinger equation, nothing else --- no collapse, no extra
 variables. Generalises to relativistic QFT trivially. &
 Unclear what probability means: in what sense can both worlds exist, with
 certainty, and yet have different probabilities associated with them?\\
+\textbf{Super\-deter\-minism} (not in the lectures; \S\ref{sec:sd}) &
+Local, deterministic, single outcomes, definite values before measurement.
+Quantum randomness becomes ignorance, so it is in principle testable. &
+Settings must be correlated with hidden variables however they are chosen:
+looks conspiratorial and threatens controlled inference generally. No complete
+theory reproducing quantum mechanics yet exists.\\
 \textbf{Bohr} (Copenhagen) &
 --- &
-Impossible to tell what the view actually says is going on. The three stories
+Impossible to tell what the view actually says is going on. The stories
 above are a proof by construction that he was wrong that no such story could be
 told.\\
 \bottomrule
@@ -528,6 +745,32 @@ multiverse in which probability itself needs reconstruction (Everett).
         (2011) --- what Bell does and does not imply about relativity.
   \item D. Wallace, \emph{The Emergent Multiverse}, Oxford UP (2012) --- the
         state of the art on Everettian probability.
+  \item P.\,C.\,W. Davies and J.\,R. Brown (eds.), \emph{The Ghost in the Atom},
+        Cambridge UP (1986) --- the Bell interview in which ``super-deterministic''
+        appears.
+  \item J.\,S. Bell, ``Free variables and local causality'' (1977), reprinted in
+        \emph{Speakable and Unspeakable}; with A. Shimony, M.\,A. Horne and
+        J.\,F. Clauser's ``Comment on the theory of local beables'' (1976),
+        the original exchange on the free-choice assumption.
+  \item S. Hossenfelder and T.\,N. Palmer, ``Rethinking superdeterminism'',
+        \emph{Frontiers in Physics} \textbf{8}, 139 (2020),
+        \href{https://arxiv.org/abs/1912.06462}{arXiv:1912.06462} --- the
+        modern case for, including proposed tests.
+  \item M.\,J.\,W. Hall, ``Local deterministic model of singlet state
+        correlations based on relaxing measurement independence'',
+        \emph{Phys.\ Rev.\ Lett.}\ \textbf{105}, 250404 (2010).
+  \item The BIG Bell Test Collaboration, ``Challenging local realism with human
+        choices'', \emph{Nature} \textbf{557}, 212 (2018); D. Rauch et al.,
+        ``Cosmic Bell test using random measurement settings from high-redshift
+        quasars'', \emph{Phys.\ Rev.\ Lett.}\ \textbf{121}, 080403 (2018).
+  \item I. Sen and A. Valentini, ``Superdeterministic hidden-variables models
+        I: non-equilibrium and signalling'', \emph{Proc.\ R.\ Soc.\ A}
+        \textbf{476}, 20200212 (2020) --- the fine-tuning case against.
+  \item K.\,B. Wharton and N. Argaman, ``Colloquium: Bell's theorem and locally
+        mediated reformulations of quantum mechanics'', \emph{Rev.\ Mod.\ Phys.}\
+        \textbf{92}, 021002 (2020) --- retrocausal and related escapes.
+  \item G. 't Hooft, \emph{The Cellular Automaton Interpretation of Quantum
+        Mechanics}, Springer (2016).
 \end{itemize}
 
 \end{document}
